@@ -1,77 +1,80 @@
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body{
-  background-color: #ddd;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
+background-color: #ddd;
+font-size: 18px;
+margin: 0;
+padding: 0;
 }
 
 h1{
-  font-size: 50px;
-  line-height: 1;
-  padding: 50px 0;
-  text-align: center;
+font-size: 50px;
+line-height: 1;
+padding: 50px 0;
+text-align: center;
 }
 
 h2{
-  font-size: 32px;
-  line-height: 1.5;
+font-size: 32px;
+line-height: 1.5;
 }
 
 nav ul{
-  list-style-type: none;
+list-style-type: none;
 }
 
 nav li{
-  /*Your code here */
+  padding-right: 20px;
+  display: inline;
 }
 
 nav a{
-  color: black;
-  font-weight: bold;
-  text-decoration: /*Your code here - remove the underline*/;
+color: black;
+font-weight: bold;
+text-decoration: none;
 }
 
 nav a:hover{
-  text-decoration: /*Your code here - add the underline*/;
+text-decoration: underline;
 }
 
 .skip a{
   background: white;
   left: 0;
   padding: 6px;
-  position: /*Your code here - position relative to the parent */;
-  top:      /*Your code here - place 40px higher */;
+  position: absolute;
+  top: -40px;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
 }
-
-/*Your code here*/{
-/*Add the selector and rule to move the skip link to the exact top.*/
+  
+.skip a:focus{
+  top:0;
 }
 
-/*Your code here*/{
-/*Add the selector and code to put a 2px black border around all elements in focus.*/
+:focus {
+  border: solid 2px black;
 }
 
 
 footer{
-  background-color: black;
-  color: white;
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
-  grid-row: 7 / auto;   /*Can you rewrite it?*/
-  padding-top: 30px;
-  text-align: center;
+background-color: black;
+color: white;
+grid-column: 1 / -1;  /*Can you explain what this does? Goes until whatever the last grid column line is.*/
+grid-row-start: 7;
+grid-row-end: span 1;   /*Can you rewrite it?*/
+padding-top: 30px;
+text-align: center;
 }
 
 
 .container{
-
-  /*Your code here  */
+  display: grid;
+  grid-template-columns: 100px 500px 100px;
+  grid-row-gap: 15px;
 
   /*Provided*/
   grid-template-rows: 30px auto auto auto auto auto 100px; 
@@ -79,37 +82,133 @@ footer{
 }
 
 .nav{
-   /*Your code here */
+grid-column-start: 1;
+grid-column-end: 4;
+grid-row-start: 1;
+grid-row-end: span 1;
+align-self: center;
 
-  /*Provided*/
-  background-color: #ddd;
-  padding: 20px 0; 
-  text-align: left; 
+/*Provided*/
+background-color: #ddd;
+padding: 20px 0; 
+text-align: left; 
 }
 
 header{
-  background-attachment: fixed; /* Parallax effect */
-  background-image: url();      /* Your code here - Link to header.jpg in the images folder */
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
-  color: white;
-  height: 400px;                /* Parallax effect */
+background-attachment: fixed; /* Parallax effect */
+background-image: url("../images/header.jpg");      /* Your code here - Link to header.jpg in the images folder */
+background-position: center;  /* Parallax effect */
+background-repeat: no-repeat; /* Parallax effect */
+background-size: cover;       /* Parallax effect */
+color: white;
+height: 400px;                /* Parallax effect */
 
-  /*Your code here - cover the entire row*/
+grid-column-start: 1;
+grid-column-end: span 3;
+grid-row-start: 2;
+grid-row-end: span 1;
 }
 
 header p{
-  color: white;
-  font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
+color: white;
+font-size: 24px;
+padding: 0 100px;
+text-align: center;
 }
 
 .about-image{
-  /*Your code here */
-
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 3;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
 }
+
+.about{
+grid-column-start: 2;
+grid-column-end: span 1;
+grid-row-start: 3;
+grid-row-end: span 1;
+}
+
+.method-image{
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.method{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 4;
+  grid-row-end: span 1;
+}
+
+.clients-image{
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 5;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.clients{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 5;
+  grid-row-end: span 1;
+}
+
+.contact-image{
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 6;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.contact{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 6;
+  grid-row-end: span 1;
+}
+
+.text-block{
+
+  padding: 30px;
+  justify-self: center;
+  align-self: center;
+
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+
+
+@media screen and (min-width: 800px){
+
+.container{
+  /*Your code here */
+  grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+}
+
+.nav{
+  background-color: #ddd;
+
+   /*Your code here */
+}
+
+.about-image{
+   /*Your code here */
+  }
 
 .about{
   /*Your code here */
@@ -120,81 +219,25 @@ header p{
 }
 
 .method{
-    /*Your code here - start in the 2nd column*/
+  /*Your code here */
 }
 
 .clients-image{
- /*Your code here */
+  /*Your code here */
+
 }
 
 .clients{
- /*Your code here */
+  /*Your code here */
 }
 
 .contact-image{
-   /*Your code here */
+  /*Your code here */
 }
 
 .contact{
-   /*Your code here */
-}
-
-.text-block{
-
-   /*Your code here */
-  
-  background-color: rgba(255, 255, 255, .8);
-  border: 10px solid black;
-  padding: 30px;
-}
-
-
-
-@media /*Your code here - Add the first media query.*/{
-
-  .container{
-    /*Your code here */
-    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;*/
-  }
-
-  .nav{
-    background-color: #ddd;
-
-     /*Your code here */
-  }
-
-  .about-image{
-     /*Your code here */
-    }
-
-  .about{
-    /*Your code here */
-  }
-
-  .method-image{
-    /*Your code here */
-  }
-
-  .method{
-    /*Your code here */
-  }
-
-  .clients-image{
-    /*Your code here */
-
-  }
-
-  .clients{
-    /*Your code here */
-  }
-
-  .contact-image{
-    /*Your code here */
-  }
-
-  .contact{
-    /*Your code here */
-   }
+  /*Your code here */
+ }
 
 }  /*End the media query*/
 
@@ -209,8 +252,8 @@ header p{
     padding: 6px;
     position: absolute;
     top: -40px;
-    -webkit-transition: /* Your code here - set to default setting */
-    transition: /* Your code here - set to default setting */
+    -webkit-transition: all 0s ease 0s;
+    transition: all 0s ease 0s;
     z-index: 1;
   }
 
